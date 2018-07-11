@@ -9,8 +9,8 @@ class TestDockerapp(unittest.TestCase):
     def test_save_value(self):
         response = self.app.post('/', data=dict(submit='save', key='2', cache_value='two'))
         assert response.status_code == 200
-        assert b'2' in response.data
-        assert b'two' in response.data
+        assert b'3' in response.data
+        assert b'three' in response.data
 
     def test_load_value(self):
         self.app.post('/', data=dict(submit='save', key='2', cache_value='two'))
